@@ -15,6 +15,11 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+app.get("/", (req, res) => {
+  console.log("hey ! un visiteur ! ;-)");
+  res.json({ message: "Bonjour !" });
+});
+
 app.post("/form", async (req, res) => {
   try {
     const messageData = {
